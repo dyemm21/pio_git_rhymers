@@ -2,11 +2,23 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
-    public static final int ARRAY_SIZE = 12;
-    public static final int DEFAULT_NEGATIVE_VALUE = -1;
+    private static final int ARRAY_SIZE = 12;
+    private static final int DEFAULT_NEGATIVE_VALUE = -1;
     private int[] NUMBERS = new int[ARRAY_SIZE];
 
-    public int total = -1;
+    protected int total = -1;
+
+    public static int getArraySize() {
+        return ARRAY_SIZE;
+    }
+
+    public static int getDefaultNegativeValue() {
+        return DEFAULT_NEGATIVE_VALUE;
+    }
+
+    protected int getTotal() {
+        return total;
+    }
 
     public void countIn(int in) {
         if (!isFull())
@@ -33,4 +45,7 @@ public class DefaultCountingOutRhymer {
         return NUMBERS[total--];
     }
 
+    public int[] getNumbers() {
+        return NUMBERS;
+    }
 }
